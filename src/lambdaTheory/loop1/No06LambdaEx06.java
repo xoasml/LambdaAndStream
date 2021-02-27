@@ -1,4 +1,4 @@
-package lambdaTheory;
+package lambdaTheory.loop1;
 
 import java.util.Arrays;
 import java.util.function.IntConsumer;

@@ -1,4 +1,4 @@
-package lambdaTheory;
+package lambdaTheory.loop1;
 
 import java.util.ArrayList;
 import java.util.HashMap;

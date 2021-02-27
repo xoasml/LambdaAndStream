@@ -1,4 +1,4 @@
-package lambdaTheory;
+package lambdaTheory.loop1;
 
 public class LambdaWrite {
     int max(int a, int b) {

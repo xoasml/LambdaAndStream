@@ -1,4 +1,4 @@
-package lambdaTheory;
+package lambdaTheory.loop1;
 
 import java.util.function.Function;
 import java.util.function.Predicate;

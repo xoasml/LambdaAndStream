@@ -1,4 +1,4 @@
-package lambdaTheory;
+package lambdaTheory.loop1;
 
 @FunctionalInterface
 interface MyFunction3 {
