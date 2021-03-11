@@ -18,15 +18,12 @@ public class Ex09_MiddleMap {
         fileNameStream = Stream.of(fileArr).map(File::getName);
 
         fileNameStream.filter(s -> s.indexOf(".") > 0)      // 확장자 없는것 제외
+                .peek(s -> System.out.printf("filename=%s%n", s))
                 .map(s -> s.substring(s.indexOf(".")+1))    // 확장자만 추출
+                .peek(s -> System.out.printf("extension=%s%n", s))
                 .map(s -> s.toUpperCase(Locale.ROOT))       // 대문자
                 .distinct()                                 // 중복 제거
-                .forEach(System.out::print);                // JAVABAKTXT
-
-
-
-
-
+                .forEach(System.out::println);                // JAVABAKTXT
     }
 
 }
