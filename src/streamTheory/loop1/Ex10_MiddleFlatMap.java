@@ -19,7 +19,7 @@ public class Ex10_MiddleFlatMap {
         System.out.println();
 
         String[] lineArr = {
-                "Belive or not It is true",
+                "Believe or not It is true",
                 "Do or do not There is no try"
         };
         Stream<String> lineStream = Arrays.stream(lineArr);
