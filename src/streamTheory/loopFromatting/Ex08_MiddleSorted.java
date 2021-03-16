@@ -2,7 +2,7 @@ package streamTheory.loopFromatting;
 
 public class Ex08_MiddleSorted {
     public static void main(String[] args) {
-        MiddleStu[] streamStudent = {
+        MiddleStu[] stusArr = {
                 new MiddleStu("김자바", 1, 200),
                 new MiddleStu("안자바", 2, 100),
                 new MiddleStu("박자바", 2, 150),
