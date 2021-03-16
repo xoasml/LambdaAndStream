@@ -1,4 +1,4 @@
 package streamTheory.loopFromatting;
 
-public class Ex11_Optional {
+public class Ex12_OptionalHowToUse {
 }
