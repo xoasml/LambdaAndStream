@@ -3,7 +3,7 @@ package streamTheory.loop1;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-public class Ex12_Optional {
+public class Ex12_OptionalHowToUse {
     public static void main(String[] args) {
         Optional<String> optStr = Optional.of("abcde");
 //        Optional<Integer> optInt = optStr.map(String::length);

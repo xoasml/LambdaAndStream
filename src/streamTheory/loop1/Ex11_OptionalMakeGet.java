@@ -3,7 +3,7 @@ package streamTheory.loop1;
 
 import java.util.Optional;
 
-public class Ex11_Optional {
+public class Ex11_OptionalMakeGet {
     public static void main(String[] args) {
 //        int[] arr = null;
         int[] arr = new int[0];
@@ -23,10 +23,10 @@ public class Ex11_Optional {
 //            str = ""; // 예외가 발생하면 빈문자열("")로 초기화
 //        }
 
-        str = opt.orElse("EMPTY"); // Optional에 저장된 값이 null이면 ""반환
-//        str = opt.orElseGet(() -> "EMPTY"); // Optional에 저장된 값이 null이면 ""반환
+        str = opt.orElse("EMPTY"); // Optional에 저장된 값이 null이면 "EMPTY"반환
+//        str = opt.orElseGet(() -> "EMPTY"); // Optional에 저장된 값이 null이면 "EMPTY"반환
 //        str = opt.orElseGet(String::new); // Optional에 저장된 값이 null이면 ""반환
-//        str = opt.orElseGet(() -> new String); // Optional에 저장된 값이 null이면 ""반환
+//        str = opt.orElseGet(() -> new String()); // Optional에 저장된 값이 null이면 ""반환
         System.out.println("str= " + str);
     }
 }
