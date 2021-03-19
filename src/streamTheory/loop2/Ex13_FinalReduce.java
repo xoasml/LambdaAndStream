@@ -1,6 +1,7 @@
 package streamTheory.loop2;
 
 import java.util.Optional;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.Optional;
@@ -29,6 +30,13 @@ public class Ex13_FinalReduce {
 //        Stream<String>을 Stream<Integer>로 변환 -> s.length()
         Stream<Integer> integerStream = Stream.of(strArr).map(String::length);
         Optional<Integer> opt = integerStream.reduce(Integer::min);
+        System.out.println(opt.orElse(0));
+
+//      Stream<String>을 IntStream으로 변환
+        IntStream intStream1 = Stream.of(strArr).mapToInt(String::length);
+        IntStream intStream2 = Stream.of(strArr).mapToInt(String::length);
+        IntStream intStream3 = Stream.of(strArr).mapToInt(String::length);
+        IntStream intStream4 = Stream.of(strArr).mapToInt(String::length);
 
 
     }
