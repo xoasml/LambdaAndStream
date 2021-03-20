@@ -38,6 +38,8 @@ public class Ex13_FinalReduce {
         IntStream intStream3 = Stream.of(strArr).mapToInt(String::length);
         IntStream intStream4 = Stream.of(strArr).mapToInt(String::length);
 
+        int count = intStream1.reduce(0, (a, b) -> a + 1);
+        int sum = intStream2.reduce(0, (a, b) -> a + b);
 
     }
 }
