@@ -1,10 +1,9 @@
 package streamTheory.loop2;
 
 import java.util.Optional;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.Optional;
 
 public class Ex13_FinalReduce {
     public static void main(String[] args) {
@@ -40,6 +39,20 @@ public class Ex13_FinalReduce {
 
         int count = intStream1.reduce(0, (a, b) -> a + 1);
         int sum = intStream2.reduce(0, (a, b) -> a + b);
+
+        OptionalInt max = intStream3.reduce(Integer::max);
+        OptionalInt min = intStream4.reduce(Integer::min);
+
+        System.out.println("count : " + count);
+        System.out.println("sum : " + sum);
+        System.out.println("max : " + max.getAsInt());
+        System.out.println("min :" + min.getAsInt());
+
+        OptionalInt testOpt1 = OptionalInt.empty(); // 빈 옵셔널
+        Optional<Integer> testOpt2 = Optional.empty();
+
+        testOpt1.orElse(0);
+        testOpt2.orElseGet(() -> 0);
 
     }
 }
