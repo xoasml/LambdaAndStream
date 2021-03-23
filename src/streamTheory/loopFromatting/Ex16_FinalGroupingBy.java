@@ -24,5 +24,21 @@ public class Ex16_FinalGroupingBy {
                 new Student("강지미", false, 2, 3, 150),
                 new Student("이자바", true, 2, 3, 200)
         };
+        System.out.println("1. 단순그룹화(반별로 그룹화)");
+
+
+        System.out.println("\n2. 단순그룹화(성적별로 그룹화)");
+
+
+        System.out.println("\n3. 단순그룹화 + 통계(성적별 학생수)");
+
+
+        System.out.println("\n4. 다중그룹화(학년별, 반별)");
+
+
+        System.out.println("\n5. 다중그룹화 + 통계(학년별, 반별 1등)");
+
+
+        System.out.println("\n6. 다중그룹화 + 통계(학년별, 반별 성적그룹)");
     }
 }
