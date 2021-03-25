@@ -1,6 +1,11 @@
 package streamTheory.loop2;
 
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Ex16_FinalGroupingBy {
     public static void main(String[] args) {
         Student[] stuArr = {
@@ -26,7 +31,8 @@ public class Ex16_FinalGroupingBy {
         };
 
         System.out.println("1. 단순그룹화(반별로 그룹화)");
-
+        Map<Integer, List<Student>> stuByBan = Stream.of(stuArr).collect(Collectors.groupingBy(Student::getBan));
+        System.out.println(stuByBan);
 
         System.out.println("\n2. 단순그룹화(성적별로 그룹화)");
 
