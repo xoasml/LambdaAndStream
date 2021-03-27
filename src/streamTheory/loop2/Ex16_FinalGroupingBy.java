@@ -37,9 +37,9 @@ public class Ex16_FinalGroupingBy {
         System.out.println("\n2. 단순그룹화(성적별로 그룹화)");
         Map<Student.Level, List<Student>> stuByScore = Stream.of(stuArr).collect(
                 Collectors.groupingBy(student -> {
-                    if(student.getScore() >= 200){
+                    if (student.getScore() >= 200) {
                         return Student.Level.HIGH;
-                    } else if(student.getScore() >= 100){
+                    } else if (student.getScore() >= 100) {
                         return Student.Level.MID;
                     } else {
                         return Student.Level.LOW;
@@ -51,7 +51,20 @@ public class Ex16_FinalGroupingBy {
         System.out.println(stuByScore.get(Student.Level.LOW));
 
         System.out.println("\n3. 단순그룹화 + 통계(성적별 학생수)");
-
+        Map<Student.Level, Long> cntByScore = Stream.of(stuArr).collect(
+                Collectors.groupingBy(
+                        student -> {
+                            if (student.getScore() >= 200) {
+                                return Student.Level.HIGH;
+                            } else if (student.getScore() >= 100) {
+                                return Student.Level.MID;
+                            } else {
+                                return Student.Level.LOW;
+                            }
+                        }
+                        , Collectors.counting()
+                )
+        );
 
         System.out.println("\n4. 다중그룹화(학년별, 반별)");
 
