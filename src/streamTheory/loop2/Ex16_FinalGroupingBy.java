@@ -1,8 +1,7 @@
 package streamTheory.loop2;
 
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -67,13 +66,50 @@ public class Ex16_FinalGroupingBy {
         );
 
         System.out.println("\n4. 다중그룹화(학년별, 반별)");
+        Map<Integer, Map<Integer, List<Student>>> stuByHakBan = Stream.of(stuArr).collect(
+                Collectors.groupingBy(Student::getHak
+                        , Collectors.groupingBy(Student::getBan))
+        );
 
+        System.out.println(stuByHakBan);
 
         System.out.println("\n5. 다중그룹화 + 통계(학년별, 반별 1등)");
+        Map<Integer, Map<Integer, Student>> topByHakBan = Stream.of(stuArr)
+                .collect(
+                        Collectors.groupingBy(
+                                Student::getHak
+                                , Collectors.groupingBy(
+                                        Student::getBan
+                                        , Collectors.collectingAndThen(
+                                                Collectors.maxBy(Comparator.comparing(Student::getScore))
+                                                , Optional::get
+                                        )
+                                )
+                        )
+                );
 
+        System.out.println(topByHakBan);
 
         System.out.println("\n6. 다중그룹화 + 통계(학년별, 반별 성적그룹)");
-
-
+        Map<String, Set<Student.Level>> groupByHakBan = Stream.of(stuArr)
+                .collect(
+                        Collectors.groupingBy(
+                                s -> s.getHak() + "-" + s.getBan()
+                                , Collectors.mapping(
+                                        s -> {
+                                            if (s.getScore() >= 200) {
+                                                return Student.Level.HIGH;
+                                            } else if (s.getScore() >= 100) {
+                                                return Student.Level.MID;
+                                            } else {
+                                                return Student.Level.LOW;
+                                            }
+                                        }, Collectors.toSet()
+                                )
+                        )
+                );
+        groupByHakBan.forEach((k, v) -> {
+            System.out.println("[" + k + "]" + v);
+        });
     }
 }
